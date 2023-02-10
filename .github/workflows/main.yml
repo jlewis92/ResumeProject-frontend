@@ -1,0 +1,28 @@
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+jobs:
+  my_job:
+    name: test python and push terraform
+    permissions:
+      pull-requests: write
+      id-token: write
+      contents: write
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - uses: actions/checkout@v3
+  
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@master
+      with:
+        aws-region: ${{ secrets.AWS_SECRET_ACCESS_REGION }}
+        role-to-assume: arn:aws:iam::${{ secrets.AWS_SECRET_ACCESS_ACCOUNT_ID }}:role/${{ secrets.AWS_SECRET_ACCESS_GITUB_RUNNER_ROLE }}
+        role-session-name: GithubActionsSession
+    - run: aws sts get-caller-identity
