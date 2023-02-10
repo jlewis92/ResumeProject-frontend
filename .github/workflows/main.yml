@@ -27,8 +27,12 @@ jobs:
         role-session-name: GithubActionsSession
     - run: aws sts get-caller-identity
     
-    - id: sync with s3
+    - id: sync
       if: github.event_name != 'pull_request'
       run: aws s3 sync .\project\ ${{ secrets.AWS_SECRET_BUCKET }}
+      
+    - id: invalidate
+      if: github.event_name != 'pull_request'
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_SECRET_DISTRIBUTION_ID }} --paths "/*" --region us-east-1
     
     
