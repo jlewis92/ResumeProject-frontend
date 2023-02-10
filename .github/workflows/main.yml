@@ -29,6 +29,6 @@ jobs:
     
     - id: sync with s3
       if: github.event_name != 'pull_request'
-      run: aws s3 sync .\project\ ${{ secrets.AWS_BUCKET }}
+      run: aws s3 sync .\project\ ${{ secrets.AWS_SECRET_BUCKET }}
     
     
