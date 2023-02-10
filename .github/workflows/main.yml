@@ -13,9 +13,6 @@ jobs:
       id-token: write
       contents: write
     runs-on: windows-latest
-    defaults:
-      run:
-        shell: bash
     steps:
     - uses: actions/checkout@v3
   
