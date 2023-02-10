@@ -7,7 +7,7 @@ on:
 
 jobs:
   my_job:
-    name: test python and push terraform
+    name: update s3 bucket
     permissions:
       pull-requests: write
       id-token: write
@@ -26,3 +26,9 @@ jobs:
         role-to-assume: arn:aws:iam::${{ secrets.AWS_SECRET_ACCESS_ACCOUNT_ID }}:role/${{ secrets.AWS_SECRET_ACCESS_GITUB_RUNNER_ROLE }}
         role-session-name: GithubActionsSession
     - run: aws sts get-caller-identity
+    
+    - id: sync with s3
+      if: github.event_name != 'pull_request'
+      run: aws s3 sync .\project\ ${{ secrets.AWS_BUCKET }}
+    
+    
