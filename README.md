@@ -1,6 +1,6 @@
 # ResumeProject-frontend
 
-Font end work for the [AWS cloud resume challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/)
+Front end work for the [AWS cloud resume challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/)
 
 This project contains a HTML static page that has a small amount of javascript driving a simple visitor counter on the page.
 
