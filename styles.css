@@ -1,0 +1,137 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.overall {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.header-overall {
+    background-color: black;
+    height: 50px;
+    font-size:xx-large;
+    display: flex;
+    flex-flow: column;
+}
+
+.header-text {
+    grid-column-start: 0;
+    color: aliceblue;
+    margin-left: 3%;
+    justify-content: left;
+}
+
+.header-text-right {
+    grid-column-start: 1;
+    color: aliceblue;
+    margin-right: 3%;
+    justify-content: right;
+    float: right;
+}
+
+.resume-header {
+    text-align: center;
+}
+
+.resume-header-text {
+    margin-left: 3%;
+    margin-right: 6%;
+}
+
+.top-line {
+    margin-top: 1%;
+    margin-bottom: 0%;
+}
+
+.resume-body {
+    margin-left: 3%;
+}
+
+.resume-body-header {
+    color: green;
+}
+
+.resume-item {
+    border-left: 2px solid black;
+    margin-bottom: 10px;
+    margin-right: 6%;
+}
+
+.resume-body-date {
+    color: gray;
+    margin-left: 6%;
+    font-style: italic;
+    margin-bottom: 1px;
+}
+
+.resume-line {
+    margin-left: 6%;
+    display: grid;
+    grid-template-columns: [first] 400px [line2] auto [end];
+}
+
+.resume-body-title {
+    grid-column-start: 1
+}
+
+.resume-body-location {
+    color: green;
+    grid-column-start: 2
+}
+
+@media only screen and (max-width: 800px) {
+    .resume-body-skills-wrapper {
+        column-width: auto;
+        resize: none;
+    }
+ }
+
+ @media only screen and (min-width: 1000px) {
+    .resume-body-skills-wrapper {
+        column-width: 250px;
+        resize: none;
+    }
+ }
+
+.resume-body-skills-wrapper>div::before {
+    font-weight: bold;
+    color: green;
+    content: "\2022";
+}
+
+.resume-body-text {
+    margin-left: 6%;
+}
+
+.footer-overall {
+    background-color: black;
+    height: 50px;
+    font-size: large;
+}
+
+.footer-text {
+    color: aliceblue;
+    margin-left: 3%;
+    white-space: nowrap;
+    float: left;
+    transform: translateY(50%);
+}
+
+.footer-counter {
+    color: aliceblue;
+    margin-left: 2px;
+    white-space: nowrap;
+    float: left;
+    transform: translateY(50%);
+}
+
+span+span {
+    margin-left: 50px;
+    /* adds in 50 px spacing when theres a double <span> tag */
+}
+
+#link {
+    color: green;
+}
