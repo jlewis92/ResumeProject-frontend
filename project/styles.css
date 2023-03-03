@@ -4,6 +4,12 @@ body {
     padding: 0;
 }
 
+@media print {
+    header, footer {
+        display: none;
+    }
+}
+
 .overall {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
@@ -18,14 +24,14 @@ body {
 
 .header-text {
     grid-column-start: 0;
-    color: aliceblue;
+    color: white;
     margin-left: 3%;
     justify-content: left;
 }
 
 .header-text-right {
     grid-column-start: 1;
-    color: aliceblue;
+    color: white;
     margin-right: 3%;
     justify-content: right;
     float: right;
@@ -112,7 +118,7 @@ body {
 }
 
 .footer-text {
-    color: aliceblue;
+    color: white;
     margin-left: 3%;
     white-space: nowrap;
     float: left;
@@ -120,7 +126,7 @@ body {
 }
 
 .footer-counter {
-    color: aliceblue;
+    color: white;
     margin-left: 2px;
     white-space: nowrap;
     float: left;
